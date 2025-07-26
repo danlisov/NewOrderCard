@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "org.example"
-version = "1.0-SNAPSHOT"
+version = "1.0-SNAPSH
 
 repositories {
     mavenCentral()
@@ -15,5 +15,30 @@ dependencies {
 }
 
 tasks.test {
+    useJUnitPlatform()
+}
+plugins {
+    id 'java'
+}
+
+group 'ru.netology'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 11
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.34.0'
+    testImplementation 'io.github.bonigarcia:webdrivermanager:5.4.1'
+}
+
+test {
     useJUnitPlatform()
 }
